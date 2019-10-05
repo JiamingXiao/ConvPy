@@ -94,36 +94,6 @@ def softmax_loss(X, y):
     return loss, dX
 
 
-def xavier_init(node_in, node_out):
-    """
-    Xavier initializer, it initializes weights and keeps variance of
-    the weight is 1 / sqrt(node_in)
-
-    Input:
-        node_in - scalar, shape of initialized weights is (node_in, node_out)
-        node_out - scalar, shape of initialized weights is (node_in, node_out)
-    Output:
-        W - shape (node_in, node_out)
-    """
-    W = np.random.randn(node_in, node_out) / np.sqrt(node_in)
-    return W
-
-
-def he_init(node_in, node_out):
-    """
-    He initializer, it initializes weights and keeps variance of
-    the weight is 1 / sqrt(node_in/2)
-
-    Input:
-        node_in - scalar, shape of initialized weights is (node_in, node_out)
-        node_out - scalar, shape of initialized weights is (node_in, node_out)
-    Output:
-        W - shape (node_in, node_out)
-    """
-    W = np.random.randn(node_in, node_out) / np.sqrt(node_in/2)
-    return W
-
-
 def zero_init(shapes):
     """
     Zero initializer, it return weights that are zeros
